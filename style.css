@@ -104,15 +104,28 @@
         background-color: var(--btn-1);
         color: var(--font-2);
     }
+    .grey-buttons:hover {
+        background-color: var(--btn-1-hover);
+    }
     .dark-buttons {
         background-color: var(--btn-3);
         color: var(--font);
+    }
+    .dark-buttons:hover{
+        background-color: var(--btn-3-hover);
     }
     .orange-buttons {
         background-color: var(--btn-2);
         color: var(--font);
         font-size: x-large;
     }
-    
+    .orange-buttons:hover {
+        background-color: var(--btn-2-hover);
+        color: #FF9500;
+    }
+    .orange-buttons:active {
+        background-color: var(--btn-2-hover);
+        color: #FF9500;
+    }
     
     
