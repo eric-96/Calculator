@@ -8,7 +8,13 @@
 
     const equalsButton = document.querySelector('.equal-sign');
     equalsButton.addEventListener('click', calculate);
-
+   
+    const plusMinus = document.querySelector('#plus-minus');
+    plusMinus.addEventListener('click', shiftPlusMinus);
+    
+    const dot = document.querySelector('#dot');
+    dot.addEventListener('click', addDot);
+    
     const clearButton = document.querySelector('[data-operator="clear"]');
     clearButton.addEventListener('click', clear);
 
@@ -61,21 +67,51 @@
         default:
         return;
         }
-        result = result.toFixed(2);
+        // Here I want to display decimals ONLY if needed!
+        if (Number.isInteger(result)) {
+            result = result.toFixed(0);
+        } else {
+            result = result.toFixed(2);
+        }
         displayContent.textContent = result;
-        lastOperationScreen.textContent = `${firstNum} ${operator} ${secondNum} = ${result}`;
+        lastOperationScreen.textContent = `${firstNum} ${operator} ${secondNum}`;
         firstNum = result;
+        // Here I don't need the '=' sign to stay highligthed (focus).
+        equalsButton.blur();
         secondNum = "";
         operator = "";
         result = "";
         }
 
-    function clear() {
-    firstNum = "";
-    secondNum = "";
-    operator = "";
-    result = "";
-    displayContent.textContent = "0";
-    lastOperationScreen.textContent = "";
-    }
+    function shiftPlusMinus() {
+        if (operator === '') {
+            if (firstNum !== '') {
+            firstNum = (parseFloat(firstNum) * -1).toString();
+            displayContent.textContent = firstNum;
+            }
+        } else {
+        if (secondNum !== '') {
+        secondNum = (parseFloat(secondNum) * -1).toString();
+        displayContent.textContent = secondNum;
+        }}}
+
+        function addDot() {
+        if (operator === "" && !firstNum.includes(".")) {
+            firstNum += ".";
+            displayContent.textContent = firstNum;
+        } else if (operator !== "" && !secondNum.includes(".")) {
+            secondNum += ".";
+            displayContent.textContent = secondNum;
+        }
+          }
+          
+          
+        function clear() {
+        firstNum = "";
+        secondNum = "";
+        operator = "";
+        result = "";
+        displayContent.textContent = "0";
+        lastOperationScreen.textContent = "";
+        }
 
