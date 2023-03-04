@@ -73,14 +73,21 @@
         display: flex;
         justify-content: flex-end;
         align-items: end;
+        flex-direction: column;
         height: 180px;
         width: 280px;
         margin-bottom: 350px;
         padding: 10px;
     }
+    .screen-last {
+        font-size: 2rem;
+        color: var(--font);
+        padding-bottom: 0;
+    }
     .display-content {
         font-size: 3rem;
         color: var(--font);
+        padding-top: 0px;
     }
 
     .buttons-grid {
