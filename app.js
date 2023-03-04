@@ -35,37 +35,40 @@
             return;
         }
         operator = this.dataset.operator;
-        lastOperationScreen.textContent = `${firstNum} ${operator}`;
-        displayContent.textContent = '0'
+       // lastOperationScreen.textContent = `${firstNum} ${operator}`;
+        //displayContent.textContent = '0'
     }
 
     function calculate() {
+        let num1 = parseFloat(firstNum);
+        let num2 = parseFloat(secondNum);
     switch (operator) {
         case "+":
-        result = firstNum + secondNum;
+        result = num1 + num2;
         break;
         case "-":
-        result = firstNum - secondNum;
+        result = num1 - num2;
         break;
         case "×":
-        result = firstNum * secondNum;
+        result = num1 * num2;
         break;
         case "÷":
-        result = firstNum / secondNum;
+        result = num1 / num2;
         break;
         case "%":
-        result = firstNum % secondNum;
+        result = num1 % num2;
         break;
         default:
         return;
-    }
-    displayContent.textContent = result;
-   // lastOperationScreen.textContent = `${firstNum} ${operator} ${secondNum} = ${result}`;
-    firstNum = result;
-    secondNum = "";
-    operator = "";
-    result = "";
-    }
+        }
+        result = result.toFixed(2);
+        displayContent.textContent = result;
+        lastOperationScreen.textContent = `${firstNum} ${operator} ${secondNum} = ${result}`;
+        firstNum = result;
+        secondNum = "";
+        operator = "";
+        result = "";
+        }
 
     function clear() {
     firstNum = "";
