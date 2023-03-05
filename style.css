@@ -137,7 +137,7 @@
         color: #FF9500;
     }
     .remainder-button:focus {
-        background-color: var(--btn-1-hover);
+        background-color: var(--btn-1-hover);   
     }
     
     
