@@ -26,6 +26,7 @@
     body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--main-background);
@@ -67,6 +68,7 @@
         border-radius: 50px;
         padding-bottom: 25px;
         background-color: var(--calculator-background);
+        margin-top: 50px;
     }
     
     .display-screen {
@@ -140,4 +142,11 @@
         background-color: var(--btn-1-hover);   
     }
     
-    
+    .fa-github {
+        font-size: 25px;
+        color: #242424;
+      }
+
+   .github{
+    margin-bottom: 50px;
+   }
