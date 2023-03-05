@@ -4,35 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/ad76778149.js" crossorigin="anonymous"></script>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-
+        
         <div class="calculator">
-                <div class="display-screen">
+            <div class="display-screen">
                 <div class="screen-last" id="lastOperationScreen"></div>
                 <output class="display-content">0</output>
-                </div>
-
+            </div>
+            
             <div class="buttons-grid">
-
+                
                 <button class="grey-buttons" data-operator="clear">AC</button>
                 <button class="grey-buttons" id="plus-minus">±</button>
                 <button class="grey-buttons remainder-button" data-operator="%">%</button>
                 <button class="orange-buttons" data-operator="÷">÷</button>
-
+                
                 <button class="dark-buttons" data-number="7">7</button>
                 <button class="dark-buttons" data-number="8">8</button>
                 <button class="dark-buttons" data-number="9">9</button>
                 <button class="orange-buttons" data-operator="×">×</button>
-
+                
                 <button class="dark-buttons" data-number="4">4</button>
                 <button class="dark-buttons" data-number="5">5</button>
                 <button class="dark-buttons" data-number="6">6</button>
                 <button class="orange-buttons" data-operator="-">-</button>
-
+                
                 <button class="dark-buttons" data-number="1">1</button>
                 <button class="dark-buttons" data-number="2">2</button>
                 <button class="dark-buttons" data-number="3">3</button>
@@ -43,9 +44,13 @@
                 <button class="orange-buttons equal-sign">=</button>
                 
             </div>
-         </div>
-
+        </div>    
     </div>
-<script src="app.js"></script>
+
+    <div class="github">
+    <p> <a href="https://github.com/eric-96" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
