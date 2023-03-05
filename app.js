@@ -26,15 +26,22 @@
     let result = '';
 
     function addNumber() {
-    const number = this.dataset.number;
-    if (operator === "") {
-        firstNum += number;
-        displayContent.textContent = firstNum;
-    } else {
-        secondNum += number;
-        displayContent.textContent = secondNum;
-    }
-    }
+        const number = this.dataset.number;
+        if (operator === "") {
+          if (firstNum === "" && number === "0") {
+            return;
+          }
+          firstNum += number;
+          displayContent.textContent = firstNum;
+        } else {
+          if (secondNum === "" && number === "0") {
+            return;
+          }
+          secondNum += number;
+          displayContent.textContent = secondNum;
+        }
+      }
+      
 
     function chooseOperator() {
         if (firstNum === "") {
